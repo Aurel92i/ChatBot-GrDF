@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot GRDF</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: block;
+    }
+    #header {
+      background: #007bff;
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px 10px 0 0;
+    }
+    #messages {
+      padding: 10px;
+      height: 390px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    #userInput {
+      width: 75%;
+      padding: 5px;
+    }
+    button {
+      padding: 6px 10px;
+      margin-left: 5px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .user { color: #333; }
+    .bot { color: #007bff; }
+  </style>
+</head>
+<body>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <div id="header">💬 Chatbot GRDF</div>
+    <div id="messages">
+      <p class="bot"><strong>Bot :</strong> Bonjour 👋 Je suis l’assistant GRDF.<br>
+      Posez-moi vos questions sur les diamètres, la réglementation, ou la sécurité !</p>
+    </div>
+    <div style="padding:5px; border-top:1px solid #ddd;">
+      <input type="text" id="userInput" placeholder="Votre question..."
+             onkeypress="if(event.key==='Enter'){envoyerMessage()}">
+      <button onclick="envoyerMessage()">Envoyer</button>
+    </div>
+  </div>
+
+  <script>
+    // Base de connaissances (questions → réponses)
+    const connaissances = {
+      "diametre pe": "Les diamètres PE (Polyéthylène) les plus utilisés sont 25 mm, 32 mm, 63 mm et au-delà selon la pression et le débit.",
+      "diametre acier": "Pour l’acier, on utilise des DN (Diamètre Nominal) comme DN 40, DN 80, DN 100 en fonction du réseau.",
+      "travaux publics": "En travaux publics, toute intervention à proximité des canalisations doit respecter la norme NF DTU et faire l’objet d’une DICT.",
+      "température flamme": "La température d’une flamme de chalumeau peut atteindre environ 1900°C pour l’acétylène/oxygène.",
+      "sécurité": "Le port des EPI (casque, gants, lunettes, vêtements ignifugés) est obligatoire pour les travaux sur réseau gaz."
+    };
+
+    // Fonction d’envoi
+    function envoyerMessage() {
+      let input = document.getElementById("userInput");
+      let message = input.value.trim();
+      if (message === "") return;
+
+      let messagesDiv = document.getElementById("messages");
+      messagesDiv.innerHTML += `<p class="user"><strong>Vous :</strong> ${message}</p>`;
+
+      // Réponse par défaut
+      let reponse = "Je ne connais pas encore la réponse à cette question. Essayez avec : 'diametre PE', 'travaux publics', 'sécurité', etc.";
+
+      // Recherche dans la base
+      for (let cle in connaissances) {
+        if (message.toLowerCase().includes(cle)) {
+          reponse = connaissances[cle];
+          break;
+        }
+      }
+
+      messagesDiv.innerHTML += `<p class="bot"><strong>Bot :</strong> ${reponse}</p>`;
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
