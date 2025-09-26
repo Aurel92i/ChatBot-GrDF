@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bouton avec image</title>
+  <style>
+    .btn-image {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .btn-image img {
+      width: 200px; /* ajustez la taille selon vos besoins */
+      height: auto;
+      border-radius: 8px; /* arrondir les coins si vous voulez */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bouton avec image -->
+  <button class="btn-image" onclick="alert('Bouton cliqué !')">
+    <img src="phooooto.png" alt="Bouton Image">
+  </button>
+
+</body>
+</html>
