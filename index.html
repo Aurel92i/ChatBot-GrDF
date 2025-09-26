@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assistant Chantiers GRDF</title>
+  <title>Assistant Astreinte GRDF</title>
   <style>
     :root {
       font-family: "Segoe UI", Tahoma, Arial, sans-serif;
@@ -585,11 +585,11 @@
   <div class="layout">
     <section class="chat-container" aria-label="Assistant chantier GRDF">
       <header class="chat-header">
-        <h1>Assistant chantiers GRDF</h1>
-        <p>Retrrouvez les fiches diametres et les regles de securite directement pendant la preparation et la realisation de vos chantiers reseau gaz.</p>
+        <h1>Assistant Astreinte GRDF</h1>
+        <p>Retrouvez les fiches diametres et les regles de securite </p>
         <div class="status-pill" aria-live="polite">
           <span></span>
-          Reference mise a jour chantier 2023-2024
+          Références mises à jour 2025
         </div>
       </header>
       <div class="tab-tray" id="topicsTray" role="group" aria-label="Acces direct thematiques">
@@ -648,7 +648,7 @@
           title: "Diametres PE (polyethylene) reseau gaz",
           category: "Diametres",
           keywords: ["diametre pe", "pehd", "polyethylene", "branchements", "sdr11", "sdr17", "tuyau jaune", "soudures pe"],
-          summary: "PE80 et PE100 conformes a NF EN 1555. Utiliser SDR 11 pour pression jusqu'a 4 bar et SDR 17 pour 2 bar. Diametres exterieurs courants de 25 a 160 mm.",
+          summary: "20,32,40,63,125,160",
           details: "<div class=\"answer-section\"><div class=\"bot-section-title\">Reperes rapides</div><table class=\"data-table\"><thead><tr><th>Usage</th><th>DN ext (mm)</th><th>Pression</th><th>Commentaire</th></tr></thead><tbody><tr><td>Branchement individuel &lt; 6 m3/h</td><td>25 ou 32</td><td>4 bar (SDR 11)</td><td>Preferez 32 mm si longueur &gt; 30 m</td></tr><tr><td>Collectif 10 a 25 m3/h</td><td>40 ou 50</td><td>4 bar</td><td>Tracer plan de recollement precis</td></tr><tr><td>Distribution secondaire 25 a 65 m3/h</td><td>63 ou 75</td><td>4 bar</td><td>Reserver zones de soudure</td></tr><tr><td>Renforcement ou boucle reseau</td><td>90 a 125</td><td>4 bar</td><td>Controle ovalisation et compaction</td></tr><tr><td>Moyenne pression locale</td><td>160</td><td>Jusqu'a 7 bar (SDR 11 PE100)</td><td>Soudeur PE niveau T4 requis</td></tr></tbody></table><ul class=\"checklist\"><li>Rayon de cintrage minimum: 25 x DN pour tube non chauffee.</li><li>Controle visuel des collerettes apres electrofusion.</li><li>Detecter et reperez toutes les soudures avant remblai.</li><li>Preparer un plan de recollement georeference.</li></ul></div>",
           resources: [
             { label: "NF EN 1555-2 reseaux gaz PE", type: "norme" },
@@ -662,7 +662,7 @@
           title: "Canalisations cuivre interieur",
           category: "Diametres",
           keywords: ["diametre cuivre", "cuivre gaz", "plomberie gaz", "brasage", "tuyau cuivre"],
-          summary: "Cuivre recuit NF EN 1057. Diametres exterieurs 12, 14, 18, 22, 28 et 35 mm courant. Limiter les pertes de charge avec parcours courts et coudes doux.",
+          summary: "Cuivre recuit NF EN 1057. Diametres exterieurs 12, 14, 18, 22, 28 et 35 mm courant.",
           details: "<div class=\"answer-section\"><div class=\"bot-section-title\">Dimensionnement indicatif</div><table class=\"data-table\"><thead><tr><th>Usage</th><th>Diametre ext</th><th>Longueur max (m)</th><th>Remarques</th></tr></thead><tbody><tr><td>Appareil individuel &lt; 2,5 m3/h</td><td>12</td><td>15</td><td>Brasage fort obligatoire</td></tr><tr><td>Chaudiere collective 4 m3/h</td><td>18</td><td>25</td><td>Support tous les 1,5 m</td></tr><tr><td>Colonne montante 6 m3/h</td><td>22</td><td>40</td><td>Integre un organe de coupure</td></tr><tr><td>Tronc principal &gt; 10 m3/h</td><td>28 ou 35</td><td>Selon calcul</td><td>Raccorder via lyre acier</td></tr></tbody></table><ul class=\"checklist\"><li>Installer coupe-gaz accessible et etiquettee.</li><li>Eviter toute soudure tendre (etain) pour le gaz.</li><li>Ventiler les gaines techniques.</li><li>Tester a la pression 150 mbar pendant 10 min minimum.</li></ul></div>",
           resources: [
             { label: "NF DTU 61.1 - Installations gaz dans les locaux", type: "norme" },
